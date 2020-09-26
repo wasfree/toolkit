@@ -2,10 +2,17 @@
 
 This container will provide all required tools to debug Kubernetes cluster issues.
 
-Deploy toolkit container as pod into your cluster:
+## Quick Start
 
-`kubectl apply -f https://raw.githubusercontent.com/wasfree/toolkit-container/master/pod.yaml`
+Deploy toolkit container as pod into your Kubernetes cluster and login:
 
-Connect to your toolkit pod:
+```
+$ kubectl apply -f https://raw.githubusercontent.com/wasfree/toolkit-container/master/pod.yaml
+$ kubectl exec -it toolkit /bin/bash
+```
 
-`kubectl exec -it toolkit /bin/bash`# toolkit
+Uninstall from Kubernetes Cluster
+```
+$ kubectl delete pod toolkit
+```
+
