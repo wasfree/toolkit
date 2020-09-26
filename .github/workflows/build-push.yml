@@ -2,16 +2,17 @@ name: build-push
 
 on:
   push:
-    paths:
-      - ./Dockerfile
     branches:
       - master
+    paths:
+    - 'Dockerfile'
+    - '.github/workflows/**'
   create:
     tags:
       - v*
 
 jobs:
-  multi:
+  build:
     runs-on: ubuntu-latest
     steps:
       - 
@@ -29,6 +30,10 @@ jobs:
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
+  push:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       -
         name: Login to DockerHub
         uses: docker/login-action@v1 

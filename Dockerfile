@@ -1,5 +1,7 @@
 FROM ubuntu:latest
 
+ENV KUBERNETES_VERSION 1.18.8
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         ca-certificates \
@@ -11,8 +13,9 @@ RUN apt-get update && \
         netcat \
         curl \
         wget \
-        postgresql-client
+        postgresql-client \
+        mysql-client
 
 # Install Kubectl
-RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.18.8/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
+RUN wget https://storage.googleapis.com/kubernetes-release/release/v${KUBERNETES_VERSION}/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
  && chmod +x /usr/local/bin/kubectl
