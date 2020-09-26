@@ -5,7 +5,7 @@ on:
     paths:
       - ./Dockerfile
     branches:
-      - master ]
+      - master
   create:
     tags:
       - v*
