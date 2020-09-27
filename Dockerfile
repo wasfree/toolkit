@@ -10,9 +10,13 @@ RUN apt-get update && \
         inetutils-traceroute \
         dnsutils \
         net-tools \
+        iproute2 \
+        mtr \
+        telnet \
         netcat \
         curl \
         wget \
+        mailutils \
         postgresql-client \
         mysql-client
 

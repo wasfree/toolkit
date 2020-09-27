@@ -3,7 +3,7 @@
 
 # Toolkit container
 
-This container will provide all required tools to debug Kubernetes cluster issues.
+This container will provide all required tools to debug Kubernetes cluster issues. If you feel there is a tool missing, please open a issue with your suggestion.
 
 ## Prerequisites
 - [kubectl](https://kubernetes.io/de/docs/tasks/tools/install-kubectl/)
@@ -23,3 +23,12 @@ Uninstall from Kubernetes Cluster
 $ kubectl delete pod toolkit
 ```
 
+## Common use cases
+
+- Test connectivity from inside Kubernetes cluster to outside world
+- Test resolving internal dns names / public dns names
+- Test health endpoints / metric endpoints / app endpoints
+- Test database connections from inside Kubernetes cluster
+- Verify Kubernetes network policies
+- Verify permissions roles / clusterroles
+- Use as Bastion host
